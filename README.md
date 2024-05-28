@@ -1,3 +1,46 @@
+# AspectRatio - Aspect ratio buttons
+
+# Installation
+
+## Install Node.js
+
+Download and install :- 
+
+https://nodejs.org/en/download/prebuilt-installer
+
+## Install Git
+
+Download and install :-
+
+https://git-scm.com/downloads
+
+## clone git repo
+
+ - Change or create a working directory.
+ - open a command terminal
+ - cut'n'paste :-
+
+`git clone https://github.com/AaronNGray/AspectRatio.git`
+
+## install
+
+```
+cd AspectRatio
+npm install
+```
+
+## run
+```
+npm run dev
+```
+
+## open browser window
+left-ctrl click on `http://localhost:5173/`
+
+
+
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
