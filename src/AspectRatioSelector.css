@@ -1,0 +1,13 @@
+.button {
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.button.selected {
+  background-color: #ffffff;
+}
+
+.aspect-ratio-selector {
+  margin-top: 20px;
+}
