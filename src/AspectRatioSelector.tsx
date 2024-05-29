@@ -8,6 +8,17 @@ const Button = ({ selected, aspectRatio, onClick }: {selected:boolean, aspectRat
             onClick={() => onClick(aspectRatio)}
         >
             <svg width="60px" height="40px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#000000" className="bi bi-aspect-ratio">
+                <defs>
+                    <filter id="invert-alpha">
+                        <feColorMatrix type="matrix" values="1 0 0 0 0 
+                                       0 1 0 0 0 
+                                       0 0 1 0 0
+                                       0 0 0 -1 1"/>
+                    </filter>
+                </defs>
+                <g
+                    transform="translate(0,-952.36223)" filter="url(#invert-alpha)"
+                ></g>
                 <path
                     d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"
                     stroke={selected ? 'black' : 'transparent'}
@@ -41,12 +52,14 @@ const AspectRatioSelector = ({actualRatio, selectedRatio, onSelectRatio}: { actu
 //    if (!ratios.includes(actualRatio))
 //        ratios.push(actualRatio);
 
+//    const actualRatio = ratios.filter((ratio) => ratio.isEqual(calculateAspectRatio(actualRatio)));
+
     return (
         <div className="aspect-ratio-selector">
         {ratios.map((ratio, index) => (
             <Button
                 key={index}
-                selected={ratio.isEqual(calculateAspectRatio(actualRatio))}
+                selected={ratio.isEqual(calculateAspectRatio(selectedRatio))}
                 aspectRatio={ratio}
                 onClick={onSelectRatio}
             />

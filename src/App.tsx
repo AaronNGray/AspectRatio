@@ -9,8 +9,9 @@ function App() {
     const actualRatio:AspectRatio = new AspectRatio(1920, 1080);
 
     const onSelectRatio = (selectedRatio:AspectRatio):void => {
-        //setAspectRatio(selectedRatio);
+        setAspectRatio(selectedRatio);
         console.log(selectedRatio);
+
     }
     return (
         <>
